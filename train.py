@@ -145,7 +145,7 @@ class Trainer(object):
             # ================================================================== #
             #                      Train the discriminator                       #
             # ================================================================== #
-            torch.tensor(image, requires_grad = True)
+            image = image.clone().detach().requires_grad_(True)
             output = self.network_G(image)
             
             
